@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.Identity",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "42",
+    "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -9,7 +9,7 @@
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "21.08",
+            "version": "22.08",
             "add-ld-path": "."
         }
     },
@@ -38,7 +38,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "cd12c9442354c4e071d565d913bd239990fb383d"
+                    "commit" : "75a6d95988736ec0471d22ceb07579c0cedac2ad"
                 }
             ]
         },
@@ -48,8 +48,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/b1043bddacd945c6f148eef908aadf3b/identity-0.3.0.tar.xz",
-                    "sha256" : "6c99bdebf98aca0bf4292f98757ac46f31ec2a85d33a14dcf19f0ea715a61f56"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/c9e6d498848a28259041da5e45cb730c/identity-0.4.0.tar.xz",
+                    "sha256" : "d2ddd784e521f50883528b818800c3c4facff56c3d6809c01d069728a3543586"
                 }
             ]
         }
