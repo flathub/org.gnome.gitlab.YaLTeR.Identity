@@ -43,6 +43,59 @@
             ]
         },
         {
+            "name" : "libsass",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "--libdir=/app/lib"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/lazka/libsass.git",
+                    "branch" : "meson",
+                    "commit" : "aac79dccd3c8f7e8f22125f87a119f3b1ee9d487"
+                }
+            ]
+        },
+        {
+            "name" : "sassc",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "--libdir=/app/lib"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/lazka/sassc.git",
+                    "branch" : "meson",
+                    "commit" : "a1950c2d95ea4c051feb90bb1f43559fbb54bf36"
+                }
+            ]
+        },
+        {
+            "name" : "gtk",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dbuild-examples=false",
+                "-Dbuild-tests=false",
+                "-Dbuild-testsuite=false",
+                "-Ddemos=false",
+                "-Dmedia-ffmpeg=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
+                    "tag" : "4.10.1",
+                    "commit" : "d776ad789dfd4f69ae251dc8e6248e6ca30abd46"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "gtk-fix-drag-surface.patch"
+                }
+            ]
+        },
+        {
             "name" : "identity",
             "buildsystem" : "meson",
             "sources" : [
