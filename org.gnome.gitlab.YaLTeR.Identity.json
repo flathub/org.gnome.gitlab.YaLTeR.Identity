@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.Identity",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "43",
+    "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -48,8 +48,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/c9e6d498848a28259041da5e45cb730c/identity-0.4.0.tar.xz",
-                    "sha256" : "d2ddd784e521f50883528b818800c3c4facff56c3d6809c01d069728a3543586"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/4c651ea16238b079684b9eb1e50f59c5/identity-0.5.0.tar.xz",
+                    "sha256" : "d4062eedbdf2d438ea72bf2783c8d82735e996cde024a5c874f6d914433f0a4b"
                 }
             ]
         }
