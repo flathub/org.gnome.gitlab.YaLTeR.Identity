@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.Identity",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "44",
+    "runtime-version" : "45",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -9,7 +9,7 @@
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "22.08",
+            "version": "23.08",
             "add-ld-path": "."
         }
     },
@@ -41,60 +41,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "75a6d95988736ec0471d22ceb07579c0cedac2ad"
-                }
-            ]
-        },
-        {
-            "name" : "libsass",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=/app/lib"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/lazka/libsass.git",
-                    "branch" : "meson",
-                    "commit" : "aac79dccd3c8f7e8f22125f87a119f3b1ee9d487"
-                }
-            ]
-        },
-        {
-            "name" : "sassc",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=/app/lib"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/lazka/sassc.git",
-                    "branch" : "meson",
-                    "commit" : "a1950c2d95ea4c051feb90bb1f43559fbb54bf36"
-                }
-            ]
-        },
-        {
-            "name" : "gtk",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dbuild-examples=false",
-                "-Dbuild-tests=false",
-                "-Dbuild-testsuite=false",
-                "-Ddemos=false",
-                "-Dmedia-ffmpeg=disabled"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
-                    "tag" : "4.10.1",
-                    "commit" : "d776ad789dfd4f69ae251dc8e6248e6ca30abd46"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "gtk-fix-drag-surface.patch"
+                    "commit" : "2a39a16391122af2f3d812e478c1c1398c98b972"
                 }
             ]
         },
@@ -104,8 +51,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/9a880cf27b3d819cf9d1976828c015ec/identity-0.5.0.tar.xz",
-                    "sha256" : "fc578a61f02ace1f4eb47104b2212d890f1c7d152f202f4becb614547633c77b"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/d938a20a7de0fa0f3348be961d49f690/identity-0.6.0.tar.xz",
+                    "sha256" : "f0a177dd1e399ab79cc0ed9265fc65903c7d54f2f4e906ecf6b687de3e502f73"
                 }
             ]
         }
