@@ -1,15 +1,16 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.Identity",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.rust-stable"
+        "org.freedesktop.Sdk.Extension.rust-stable",
+        "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "23.08",
+            "version": "24.08",
             "add-ld-path": "."
         }
     },
@@ -28,7 +29,10 @@
         "--device=dri"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin"
+        "append-path" : "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
+        "env": {
+            "RUSTFLAGS": "-C force-frame-pointers=yes"
+        }
     },
     "modules" : [
         {
@@ -41,7 +45,26 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "2a39a16391122af2f3d812e478c1c1398c98b972"
+                    "commit" : "66b43c36cf1017c878762007373964a096b3d2a5"
+                }
+            ]
+        },
+        {
+            "name": "glycin-loaders",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dlibglycin=false",
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/glycin/1.1/glycin-1.1.1.tar.xz",
+                    "sha256": "560ee42167c1ed22826618e61d83e49140db5bf47a65a9ba8ece2cd73d2a4aa8",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "glycin"
+                    }
                 }
             ]
         },
@@ -51,8 +74,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/identity/uploads/d938a20a7de0fa0f3348be961d49f690/identity-0.6.0.tar.xz",
-                    "sha256" : "f0a177dd1e399ab79cc0ed9265fc65903c7d54f2f4e906ecf6b687de3e502f73"
+                    "url" : "https://gitlab.gnome.org/-/project/12785/uploads/abddc256d6b3b7fce433a40eae4588fe/identity-0.7.0.tar.xz",
+                    "sha256" : "43dec5533b60aaa1b4d256d5d9879aa487b2115cef5f3f1818935dde9da284d6"
                 }
             ]
         }
