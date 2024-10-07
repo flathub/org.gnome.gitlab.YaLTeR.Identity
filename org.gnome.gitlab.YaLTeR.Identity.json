@@ -76,6 +76,10 @@
                     "type" : "archive",
                     "url" : "https://gitlab.gnome.org/-/project/12785/uploads/abddc256d6b3b7fce433a40eae4588fe/identity-0.7.0.tar.xz",
                     "sha256" : "43dec5533b60aaa1b4d256d5d9879aa487b2115cef5f3f1818935dde9da284d6"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-Set-manual-lifetime-for-Tracy.patch"
                 }
             ]
         }
