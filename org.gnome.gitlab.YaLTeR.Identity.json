@@ -1,9 +1,9 @@
 {
-    "app-id" : "org.gnome.gitlab.YaLTeR.Identity",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "47",
-    "sdk" : "org.gnome.Sdk",
-    "sdk-extensions" : [
+    "app-id": "org.gnome.gitlab.YaLTeR.Identity",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "47",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable",
         "org.freedesktop.Sdk.Extension.llvm18"
     ],
@@ -17,35 +17,35 @@
     "cleanup-commands": [
         "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/bin/blueprint-compiler",
         "/lib/pkgconfig"
     ],
-    "command" : "identity",
-    "finish-args" : [
+    "command": "identity",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri"
     ],
-    "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
         "env": {
             "RUSTFLAGS": "-C force-frame-pointers=yes"
         }
     },
-    "modules" : [
+    "modules": [
         {
-            "name" : "blueprint",
-            "buildsystem" : "meson",
+            "name": "blueprint",
+            "buildsystem": "meson",
             "cleanup": [
                 "*"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "66b43c36cf1017c878762007373964a096b3d2a5"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
+                    "commit": "66b43c36cf1017c878762007373964a096b3d2a5"
                 }
             ]
         },
@@ -59,8 +59,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glycin/1.1/glycin-1.1.1.tar.xz",
-                    "sha256": "560ee42167c1ed22826618e61d83e49140db5bf47a65a9ba8ece2cd73d2a4aa8",
+                    "url": "https://download.gnome.org/sources/glycin/1.1/glycin-1.1.2.tar.xz",
+                    "sha256": "41c72be1ec9ba55da90c82fc18573b742dff582b09afc37b4565c47e99cc8ff4",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "glycin"
@@ -69,20 +69,19 @@
             ]
         },
         {
-            "name" : "identity",
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "identity",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/-/project/12785/uploads/abddc256d6b3b7fce433a40eae4588fe/identity-0.7.0.tar.xz",
-                    "sha256" : "43dec5533b60aaa1b4d256d5d9879aa487b2115cef5f3f1818935dde9da284d6"
+                    "type": "archive",
+                    "url": "https://gitlab.gnome.org/-/project/12785/uploads/abddc256d6b3b7fce433a40eae4588fe/identity-0.7.0.tar.xz",
+                    "sha256": "43dec5533b60aaa1b4d256d5d9879aa487b2115cef5f3f1818935dde9da284d6"
                 },
                 {
-                    "type" : "patch",
-                    "path" : "0001-Set-manual-lifetime-for-Tracy.patch"
+                    "type": "patch",
+                    "path": "0001-Set-manual-lifetime-for-Tracy.patch"
                 }
             ]
         }
     ]
 }
-
