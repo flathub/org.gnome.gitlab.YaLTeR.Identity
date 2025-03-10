@@ -59,8 +59,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/glycin/1.1/glycin-1.1.2.tar.xz",
-                    "sha256": "41c72be1ec9ba55da90c82fc18573b742dff582b09afc37b4565c47e99cc8ff4",
+                    "url": "https://download.gnome.org/sources/glycin/1.1/glycin-1.1.6.tar.xz",
+                    "sha256": "d84cc56814f2284100ad3439a430837bb21f0f98d46e0d2b58689f2c19708f04",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "glycin"
