@@ -1,6 +1,6 @@
 app-id: org.gnome.gitlab.YaLTeR.Identity
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -33,7 +33,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
-        commit: 66b43c36cf1017c878762007373964a096b3d2a5
+        commit: 04ef0944db56ab01307a29aaa7303df6067cb3c0
   - name: glycin-loaders
     buildsystem: meson
     config-opts:
@@ -41,16 +41,20 @@ modules:
       - -Dtests=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/glycin/1.1/glycin-1.1.6.tar.xz
-        sha256: d84cc56814f2284100ad3439a430837bb21f0f98d46e0d2b58689f2c19708f04
+        url: https://download.gnome.org/sources/glycin/1.2/glycin-1.2.0.tar.xz
+        sha256: 16ab4a48398639ef701c7c3e27a2d31075b30e0dcaf3f1652c907b188f4290d0
         x-checker-data:
           type: gnome
           name: glycin
   - name: identity
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://gitlab.gnome.org/-/project/12785/uploads/abddc256d6b3b7fce433a40eae4588fe/identity-0.7.0.tar.xz
-        sha256: 43dec5533b60aaa1b4d256d5d9879aa487b2115cef5f3f1818935dde9da284d6
-      - type: patch
-        path: 0001-Set-manual-lifetime-for-Tracy.patch
+      - type: git
+        url: https://gitlab.gnome.org/YaLTeR/identity.git
+        commit: 2024d9986e281ba0ca7181e070ba20c60953ec2c
+      # Generated with flatpak-cargo-generator.py
+      - cargo-sources.json
+      - type: shell
+        commands:
+          - mkdir .cargo
+          - cp cargo/config .cargo/
