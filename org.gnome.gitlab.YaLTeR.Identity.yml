@@ -1,20 +1,10 @@
 app-id: org.gnome.gitlab.YaLTeR.Identity
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-  - org.freedesktop.Sdk.Extension.llvm18
-add-extensions:
-  org.freedesktop.Platform.ffmpeg-full:
-    directory: lib/ffmpeg
-    version: '24.08'
-    add-ld-path: .
-cleanup-commands:
-  - mkdir -p ${FLATPAK_DEST}/lib/ffmpeg
-cleanup:
-  - /bin/blueprint-compiler
-  - /lib/pkgconfig
+  - org.freedesktop.Sdk.Extension.llvm21
 command: identity
 finish-args:
   - --share=ipc
@@ -22,36 +12,16 @@ finish-args:
   - --socket=wayland
   - --device=dri
 build-options:
-  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin
+  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm21/bin
   env:
     RUSTFLAGS: -C force-frame-pointers=yes
 modules:
-  - name: blueprint
-    buildsystem: meson
-    cleanup:
-      - '*'
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
-        commit: 04ef0944db56ab01307a29aaa7303df6067cb3c0
-  - name: glycin-loaders
-    buildsystem: meson
-    config-opts:
-      - -Dlibglycin=false
-      - -Dtests=false
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/glycin/1.2/glycin-1.2.3.tar.xz
-        sha256: 380aafe2bfb4eca0c45b42660ebff449600d00a43b609d5b1c83f795f5c8fb3c
-        x-checker-data:
-          type: gnome
-          name: glycin
   - name: identity
     buildsystem: meson
     sources:
       - type: git
         url: https://gitlab.gnome.org/YaLTeR/identity.git
-        commit: 6105dc05f38c1a79f91cc4da32af77dde84fc41e
+        commit: ec01551ed7190616fb94f04e1298793690311ce5
       # Generated with flatpak-cargo-generator.py
       - cargo-sources.json
       - type: shell
