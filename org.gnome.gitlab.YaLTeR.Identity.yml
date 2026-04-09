@@ -20,7 +20,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/YaLTeR/identity.git
-        commit: 3cf4d40bf49a12d2e2f11448c1a18a2c8ea5cde5
+        commit: a9249f94be154941a793bda22e282205464c775d
       # Generated with flatpak-cargo-generator.py
       - cargo-sources.json
       - type: shell
